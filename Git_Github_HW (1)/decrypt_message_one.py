@@ -41,3 +41,18 @@ encrypted_message = encrypted_file.readline()
 encrypted_file.close()
 
 # Write code below
+def get_key(val):
+    for key, value in cipher.items():
+        if val == value:
+            return key
+
+msg_letters = [x for x in encrypted_message]
+
+answer_ltrs = []
+for i in msg_letters:
+    msg_key = get_key(i)
+    answer_ltrs.append(msg_key)
+
+answer = "".join(answer_ltrs)
+print(answer)
+    
